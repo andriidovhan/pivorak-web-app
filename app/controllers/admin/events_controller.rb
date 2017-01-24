@@ -3,7 +3,7 @@ module Admin
     helper_method :event, :events, :venues
 
     def new
-      @event = Event.new
+      @event = Event::New.call
     end
 
     def create

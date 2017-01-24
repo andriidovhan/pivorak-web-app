@@ -11,6 +11,9 @@ class Event < ApplicationRecord
   PASSED        = :passed
   DEFAULT_LIMIT = 50
 
+  DEFAULT_STARTED_AT_HOURS = 18
+  DEFAULT_FINISHED_AT_HOURS = 22
+
   mount_uploader :cover, EventCoverUploader
 
   friendly_id :title, use: :slugged

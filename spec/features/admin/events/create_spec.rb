@@ -4,6 +4,16 @@ RSpec.describe 'Events CREATE' do
     visit '/admin/events/new'
   end
 
+  let!(:default_started_at_hour) { Event::DEFAULT_STARTED_AT_HOURS }
+  let!(:default_finished_at_hour) { Event::DEFAULT_FINISHED_AT_HOURS }
+
+  context 'dateTime inputs' do
+    it 'should have default values' do
+      expect(find(:xpath, '//select[contains(@id, "started_at_4i")]').value).to eq(default_started_at_hour.to_s)
+      expect(find(:xpath, '//select[contains(@id, "finished_at_4i")]').value).to eq(default_finished_at_hour.to_s)
+    end
+  end
+
   context 'invalid input' do
     it 'validates errors' do
       fill_in 'Title',  with: ''
@@ -34,7 +44,7 @@ RSpec.describe 'Events CREATE' do
 
     it 'creates event with venue' do
       visit '/admin/events/new'
-      
+
       fill_in 'Title',  with: 'Super New Event'
       select(venue.name, from: 'Venue')
 
