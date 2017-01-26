@@ -1,10 +1,6 @@
 module Stripe
   class Token
-    class Create
-      def self.call(params)
-        new(params).perform
-      end
-
+    class Create < ::ApplicationService
       def initialize(params)
         @number    = params[:number]
         @cvc       = params[:cvc]

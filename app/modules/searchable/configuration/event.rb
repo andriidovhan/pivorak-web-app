@@ -4,9 +4,7 @@ module Searchable
       include Configurable
 
       define_searchable do
-        %i(title agenda description).each do |attribute|
-          pg_search_scope "by_#{attribute}", against: attribute
-        end
+        multisearchable against: %i(title description agenda)
       end
     end
   end

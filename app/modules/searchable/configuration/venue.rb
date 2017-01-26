@@ -1,10 +1,10 @@
 module Searchable
   module Configuration
-    module User
+    module Venue
       include Configurable
 
       define_searchable do
-        multisearchable against: %i(first_name last_name email)
+        multisearchable against: %i(name address description)
       end
     end
   end

@@ -1,10 +1,6 @@
 module Stripe
   class Customer
-    class Create
-      def self.call(params)
-        new(params).perform
-      end
-
+    class Create < ::ApplicationService
       def initialize(params)
         @email  = params[:email]
         @card   = params[:card]

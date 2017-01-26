@@ -27,6 +27,7 @@ en:
     description: Description
     list: List
     url: Url
+    search: Search
     preview: Preview
 
   resources:
@@ -43,6 +44,9 @@ en:
   donations:
     success: Thank you, your donation has been accepted!
 
+  search_result:
+    singular: Search Result
+    plural: Search Results
   goals:
     plural: Goals
     singular: Goal

@@ -1,10 +1,10 @@
 module Searchable
   module Configuration
-    module User
+    module Goal
       include Configurable
 
       define_searchable do
-        multisearchable against: %i(first_name last_name email)
+        multisearchable against: %i(title description)
       end
     end
   end
